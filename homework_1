@@ -1,0 +1,45 @@
+'           Блок 1          '
+
+'Easy'
+1
+
+def simplle_funtion(a,b : int) -> int:
+    return a+b
+
+var = simplle_funtion
+
+2
+print(var)      # Вижу объект "Функция" с её адресом в памяти
+
+3
+print(var(3,17))
+
+'Medium'
+
+1
+
+def sum_func(arg1, arg2, arg3 ,arg4, *args) -> int:
+    return sum([arg1, arg2, arg3 ,arg4, sum(args)])
+
+
+print( sum_func(1,2,3,4) )
+print( sum_func(1,2,3,4,5) )
+print( sum_func(1,2,3,4,5,6,7) )
+
+'case: прокинуть в функцию только 1 аргумент'
+#error=sum_func(1)  #TypeError: sum_func() missing 3 required positional arguments  - не хватает обязательных параметров
+
+print('\ncase: прокинуть аргументы таким образом, чтобы обязательный аргумент был передан одновременно позиционно и по ключу')
+print( sum_func(1, 2 , arg3=3 ,arg4=4) )
+
+print ('\ncase: создать кортеж со значениями и распаковать его при вызове функции с помощью *')
+my_typle=(1,2,3,4)
+(arg1, arg2, arg3 ,arg4)=my_typle
+print( sum_func(arg1, arg2, arg3 ,arg4) )
+print( sum_func(my_typle[0], my_typle[1], my_typle[2], my_typle[3]) )
+'так или сяк, не понял задания'
+
+'case: создать словарь со значениями и распаковать его при вызове функции с помощью * и **: что наблюдаете? Почему?'
+my_dict = {arg1: 1, arg2:2, arg3: 3, arg4: 7}
+print( my_dict[arg4] )
+a=3
